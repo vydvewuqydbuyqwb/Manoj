@@ -1,0 +1,26 @@
+def calculate_power_difference(N, powers):
+    ironman_power = 0
+    captain_power = 0
+    start = 0  # Start index for the current team's selection
+
+    # Iterate through the avengers and assign them to teams alternately
+    while start < N:
+        # Ironman's turn
+        if start % 2 == 0:
+            ironman_power += powers[start]
+        # Captain's turn
+        else:
+            captain_power += powers[start]
+        start += 1
+
+    return ironman_power - captain_power
+
+# Input
+N = int(input())
+powers = list(map(int, input().split()))
+
+# Calculate the power difference
+result = calculate_power_difference(N, powers)
+
+# Output the result
+print(result)
